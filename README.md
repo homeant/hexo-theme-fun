@@ -42,6 +42,8 @@ title: "后来的我们"
 date: 2018-04-30 23:00:00
 author: me
 cover_picture: # 文章图片，可选
+desc: #文章的描述
+keywords： #文章的关键字
 top: 1 #置顶文章，可选
 categories: #文章分类
 tags: #文章标签，可选
