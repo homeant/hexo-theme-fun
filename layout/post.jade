@@ -1,0 +1,63 @@
+extends partial/layout
+
+block site_title
+    != page.title
+block styles
+    != css('css/index.css',"css/info.css")
+    link(href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css", rel='stylesheet')
+block container
+    main
+        .con_warp
+            .infosbox
+                .newsview
+                    h3.news_title!= page.title
+                    .bloginfo
+                        ul
+                            li.author
+                                | 作者：
+                                a(href='/')!= getValue(page, "author") || getConfig('author')
+                            li.lmname
+                                a(href='/')!= getValue(page, "categories.data.0.name")
+                            li.timer!= '时间：' + date(page.date, "YYYY-MM-DD HH:mm:ss")
+                            //li.view 4567人已阅读
+                    .tags
+                        each tag in getValue(page,"tags.data",[])
+                            a(href=url_for(tag.path), target='_blank')!= tag.name
+                    - if(page.excerpt)
+                    .news_about
+                        strong 简介
+                        != page.excerpt
+                    .news_con!= page.more || page.content
+                .nextinfo
+                    p 上一篇：
+                        - var prev = getValue(page,"prev");
+                        if(prev)
+                            a(href=url_for(prev.path))!= prev.title
+                        else
+                            != '没有了'
+                    p 下一篇：
+                        - var next = getValue(page,"next");
+                            if(next)
+                                a(href=url_for(next.path))!= next.title
+                            else
+                                != '没有了'
+                .news_pl
+                    include mixins/scripts
+                    +comment()
+    aside.r_box
+        include mixins/right
+        +card()
+        +category()
+        +wechat()
+
+block copyright
+    include partial/copyright
+block scripts
+    include mixins/scripts
+    +canvas()
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js")
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js")
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js")
+    script(type='text/javascript').
+        hljs.initHighlightingOnLoad();
+    != js("js/common.js","js/index.js")

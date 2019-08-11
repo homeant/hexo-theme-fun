@@ -1,0 +1,31 @@
+extends partial/layout
+
+block site_title
+    != page.title
+block styles
+    != css('css/index.css',"css/time.css")
+block container
+    .timebox
+        ul
+            each article in sortDate(getValue(page,"posts.data",[]),"date")
+                li
+                    span!= date(article.date,"YYYY-MM-DD")
+                    i
+                        a(href=url_for(article.path), target='_blank')!=  article.title
+    //.pagelist
+    //    a(title='Total record')
+    //        b 160
+    //    b 1
+    //    a(href='/jstt/index_2.html') 2
+    //    a(href='/jstt/index_3.html') 3
+    //    a(href='/jstt/index_4.html') 4
+    //    a(href='/jstt/index_5.html') 5
+    //    a(href='/jstt/index_6.html') 6
+    //    a(href='/jstt/index_2.html') 下一页
+    //    a(href='/jstt/index_14.html') 尾页
+block copyright
+    include partial/copyright
+block scripts
+    include mixins/scripts
+    +canvas()
+    != js("js/common.js","js/index.js")

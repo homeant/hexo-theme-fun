@@ -1,0 +1,34 @@
+
+menu:
+  - title: 首页
+    url: /
+  - title: 关于我
+    url: /about.html
+  - title: 时间轴
+    url: /time.html
+
+
+favicon: /images/favicon.png
+
+recommend:
+  size: 8
+
+prefile:
+  excerpt: |
+    <p>网名：一笑奈何。</p>
+    <p>职业：JAVA软件工程师、前端软件工程师</p>
+    <p>Email：homeanter@163.com</p>
+  wechat: /images/wechat.png
+copyright: |
+  Design by
+  <a href='https://tianhui.xin' target='_blank'>怪咖晨个人博客</a>
+  京ICP备16046477号-1
+comment:
+  gitment:
+    enable: true
+    owner: homeant
+    repo: blog.tianhui.xin
+    #clientID: 6c2478e5c574adadad50
+    clientID: 57089aa17b93c235cc40
+    #clientSecret: 0aecf2c4c0d2f26b9e277f1a6c45f27b617e4e4a
+    clientSecret: 02f98a64c08a0472bc7bf952824d9a281f4161ab

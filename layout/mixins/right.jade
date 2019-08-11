@@ -1,0 +1,31 @@
+mixin card()
+    - var prefile = getConfig("prefile");
+    if(prefile)
+        .card.box
+            h2 我的名片
+            div.box_con!= prefile.excerpt
+mixin category()
+    .category.box
+        h2 文章分类
+        div.box_con!= list_categories({})
+mixin recommend()
+    .box.recommend
+        h2 推荐
+        .box_con
+            - var arr = getValue(site,"posts.data").filter(function(item){return item.top;});
+                ul
+                    each item,len in arr
+                        if(len < parseInt(getConfig("recommend.size") || 8))
+                            li
+                                a(href="")!= item.title
+mixin tags()
+    .tags.box
+        h2 标签
+        .box_con!= list_tags({show_count:false})
+mixin wechat()
+    - var prefile = getConfig("prefile");
+    if(prefile.wechat)
+        .wechat.box
+            h2 我的微信
+            div.box_con
+                img(src=url_for(prefile.wechat))

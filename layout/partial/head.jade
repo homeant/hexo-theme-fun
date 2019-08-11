@@ -1,0 +1,11 @@
+meta(charset='UTF-8')
+title
+    block site_title
+        = config.title
+block description
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1")
+    meta(name="description", content= page.desc ? page.desc : config.description)
+    meta(name="keywords", content= page.keywords ? page.keywords : config.keywords)
+    meta(name="author", content= config.author)
+    link(rel="short icon", href=url_for(theme.favicon))

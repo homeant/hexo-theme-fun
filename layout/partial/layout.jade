@@ -1,0 +1,16 @@
+doctype html
+html(lang=config.language)
+    head
+        include head
+        <!--[if lt IE 9]>
+        != js('js/modernizr.js')
+        <![endif]-->
+        block styles
+    body
+        include header
+        article
+            block container
+        block copyright
+        a.cd-top(href='#') Top
+        != js("js/jquery.min.js",'js/scrollreveal.js','js/hc-sticky.js')
+        block scripts

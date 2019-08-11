@@ -1,0 +1,36 @@
+extends partial/layout
+
+block site_title
+    != page.title
+block styles
+    != css('css/index.css',"css/info.css")
+    link(href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css", rel='stylesheet')
+block container
+    main
+        .con_warp
+            .infosbox
+                .newsview
+                    h3.news_title!= page.title
+                    //.bloginfo
+                    //.tags
+                    .news_con!= page.content
+                .news_pl
+                    h2 评论
+                    include mixins/scripts
+                    +comment()
+    aside.r_box
+        include mixins/right
+        +card()
+        +category()
+        +wechat()
+block copyright
+    include partial/copyright
+block scripts
+    include mixins/scripts
+    +canvas()
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js")
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js")
+    script(src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js")
+    script(type='text/javascript').
+        hljs.initHighlightingOnLoad();
+    != js("js/common.js","js/index.js")
