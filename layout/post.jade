@@ -19,7 +19,9 @@ block container
                             li.lmname
                                 a(href='/')!= getValue(page, "categories.data.0.name")
                             li.timer!= '时间：' + date(page.date, "YYYY-MM-DD HH:mm:ss")
-                            //li.view 4567人已阅读
+                            li.view
+                                span#busuanzi_value_page_pv 99
+                                span 次访问
                     .tags
                         each tag in getValue(page,"tags.data",[])
                             a(href=url_for(tag.path), target='_blank')!= tag.name
@@ -60,4 +62,5 @@ block scripts
     script(src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js")
     script(type='text/javascript').
         hljs.initHighlightingOnLoad();
+    script(async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js")
     != js("js/common.js","js/index.js")
