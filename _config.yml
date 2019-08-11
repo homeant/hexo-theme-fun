@@ -27,8 +27,6 @@ comment:
   gitment:
     enable: true
     owner: homeant
-    repo: blog.tianhui.xin
-    #clientID: 6c2478e5c574adadad50
-    clientID: 57089aa17b93c235cc40
-    #clientSecret: 0aecf2c4c0d2f26b9e277f1a6c45f27b617e4e4a
-    clientSecret: 02f98a64c08a0472bc7bf952824d9a281f4161ab
+    repo: fun.tianhui.xin
+    clientID: c36cc614c567adeadfb5
+    clientSecret: 341ad3eeab7c19c58db6786935eb8cc4d0b98263
