@@ -7,8 +7,10 @@ mixin canvas()
         - path = '/js/canvas-nest.js'
     script(src=path type="text/javascript" color="47,135,193" opacity='0.7' zIndex="-2" count="199" )
 mixin comment()
-    #container
+    #comment_container
     - var gitment = getConfig("comment.gitment");
+    - var gitalk = getConfig("comment.gitalk");
+    - log(gitalk)
     if(gitment.enable)
         != css('https://imsun.github.io/gitment/style/default.css')
         != js('https://imsun.github.io/gitment/dist/gitment.browser.js')
@@ -23,4 +25,19 @@ mixin comment()
                     client_secret: '#{gitment.clientSecret}',
                 },
             })
-            gitment.render('container')
+            gitment.render('comment_container')
+    else if (gitalk.enable)
+        != css("https://unpkg.com/gitalk/dist/gitalk.css")
+        != js("https://unpkg.com/gitalk/dist/gitalk.min.js")
+        != js('js/base64.min.js')
+        script.
+            const gitalk = new Gitalk({
+                clientID: '#{gitalk.clientID}',
+                clientSecret: '#{gitalk.clientSecret}',
+                repo: '#{gitalk.repo}',
+                owner: '#{gitalk.owner}',
+                admin: ['#{gitalk.owner}'],
+                id: window.btoa("#{page.path}"),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: true  // Facebook-like distraction free mode
+            })
+            gitalk.render('comment_container')
