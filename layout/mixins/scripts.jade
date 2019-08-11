@@ -10,7 +10,6 @@ mixin comment()
     #comment_container
     - var gitment = getConfig("comment.gitment");
     - var gitalk = getConfig("comment.gitalk");
-    - log(gitalk)
     if(gitment.enable)
         != css('https://imsun.github.io/gitment/style/default.css')
         != js('https://imsun.github.io/gitment/dist/gitment.browser.js')
