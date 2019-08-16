@@ -2,6 +2,17 @@
 
 > 兴趣
 
+
+## 更新日志
+
+2019-08-16
+
+* 加入hexo主题
+
+2019-08-18
+
+* 加入分词搜索
+
 ## 安装
 
 想要把hexo的主题应用到自己的博客上，需要在本地先构建好hexo所依赖的环境。[hexo使用文档](https://hexo.io/zh-cn/docs/index.html)
@@ -30,7 +41,7 @@ $ npm install -g hexo-cli
 hexo里每个不同的主题所依赖的包都不尽相同。安装的默认主题已经包含了一些依赖包，但是对于`fun`这个主题来说是不够的，所以还需要安装以下几个:
 
 ```
-    npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-archive hexo-renderer-sass get-value
+    npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-archive hexo-renderer-sass get-value segment
 ```
 
 ## 使用说明
