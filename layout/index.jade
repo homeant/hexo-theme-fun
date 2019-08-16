@@ -13,14 +13,14 @@ block container
                     span.blogpic
                         a(href='/', title='')
                             img(src=url_for(item.cover_picture), alt='')
-                    p.blogtext!= item.excerpt || truncate(strip_html(item.content),{length: 120})
+                    p.blogtext!= item.excerpt || truncate(strip_html(item.content), {length: 120})
                     .bloginfo
                         ul
                             li.author
                                 a(href='/')!= item.author || getConfig('author')
                             li.lmname
-                                a(href=url_for(getValue(item,"categories.data.0.path")))!= getValue(item,"categories.data.0.name")
-                            li.timer!= date(item.date,'YYYY-MM-DD HH:mm:ss')
+                                a(href=url_for(getValue(item, "categories.data.0.path")))!= getValue(item, "categories.data.0.name")
+                            li.timer!= date(item.date, 'YYYY-MM-DD HH:mm:ss')
                             //li.view
                             //    span 34567
                             //    | 已阅读
@@ -37,4 +37,4 @@ block copyright
 block scripts
     include mixins/scripts
     +canvas()
-    != js("js/common.js","js/index.js")
+    != js("js/common.js", "js/index.js")

@@ -17,7 +17,7 @@ mixin recommend()
                     each item,len in arr
                         if(len < parseInt(getConfig("recommend.size") || 8))
                             li
-                                a(href="")!= item.title
+                                a(href=url_for(item.path))!= item.title
 mixin tags()
     .tags.box
         h2 标签

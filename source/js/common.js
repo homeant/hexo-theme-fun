@@ -8,13 +8,15 @@ $(document).ready(function () {
         style.display = style.display == "block" ? "none" : "block";
         oH2.className = style.display == "block" ? "open" : ""
     }
-
-    var obj=null;
-    var As=document.getElementById('starlist').getElementsByTagName('a');
+    
+    var obj = null;
+    var As = document.getElementById('starlist').getElementsByTagName('a');
     obj = As[0];
-    for(i=1;i<As.length;i++){if(window.location.href.indexOf(As[i].href)>=0)
-        obj=As[i];}
-    obj.id='selected';
+    for (i = 1; i < As.length; i++) {
+        if (window.location.href.indexOf(As[i].href) >= 0)
+            obj = As[i];
+    }
+    obj.id = 'selected';
     
     //search
     $('.search_ico').click(function () {
@@ -83,5 +85,19 @@ $(document).ready(function () {
     if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
         window.scrollReveal = ScrollReveal({reset: true});
     }
-    ;
+    var data = [];
+    $.ajax({
+        url: "/search.json",
+        dataType: "json"
+    }).then(function (resp) {
+        data = resp;
+    });
+    $("#keyboard").bind("input", function () {
+        var val = $(this).val();
+        data.forEach(r => {
+            if ($.inArray(val, r.word) > -1) {
+                console.log(r.title);
+            }
+        })
+    });
 })
