@@ -8,7 +8,6 @@ const segment = new Segment();
 segment.useDefault();
 
 hexo.extend.generator.register("search", function (locals) {
-    console.log("中文分词 start....")
     const posts = locals.posts.sort('-date');
     const result = [];
     posts.forEach(r => {

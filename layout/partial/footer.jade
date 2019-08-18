@@ -1,0 +1,22 @@
+footer
+    section.footer_top
+        .footer_container
+            div
+                h3.item_title 关于我
+                div.item_content
+                    p 内容
+             div
+                 h3.item_title 友情链接
+                 .item_content
+                     ul.list
+                         each item in getValue(site,"data.blogroll",[])
+                             li.list_item
+                                a(href=item.link)!=item.title
+    section.footer_bottom
+        .footer_container
+            p.copyright!=getConfig("copyright")
+            ul.social_network
+                each item in getValue(site,"data.contact",[])
+                    li.social_network_item
+                        a(href=item.link)
+                            i.iconfont(class=item.icon)

@@ -15,6 +15,8 @@
         border-bottom: 1px dashed #009a61
       hr
         margin: .8rem 0
+      p:not(:last-child)
+        margin-bottom: 1rem
 
 .intitle
   line-height: 40px
@@ -53,15 +55,6 @@
     font-weight: 400 !important
     font-size: 13px
     padding-right: 8px
-
-.news_content
-  line-height: 24px
-  font-size: 14px
-  p
-    overflow: hidden
-    padding-bottom: 4px
-    padding-top: 6px
-    word-wrap: break-word
 
 .tags
   a
@@ -102,13 +95,10 @@
 /*文章评论
 
 .news_pl
-  margin: 10px 0 0
-  width: 100%
   overflow: hidden
+  padding: 1rem
+  border-top: 1px solid #009A61
   #comment_container
-    margin: 0 .5rem
-    .gt-container
-      margin: 0 0.5rem
     .gitment-root-container
       margin: 0 !important
       .gitment-header-container

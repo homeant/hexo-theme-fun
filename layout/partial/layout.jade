@@ -5,12 +5,13 @@ html(lang=config.language)
         <!--[if lt IE 9]>
         != js('js/modernizr.js')
         <![endif]-->
+        != css('css/iconfont')
         block styles
     body
         include header
         article
             block container
-        block copyright
+        include footer
         a.cd-top(href='#') Top
         != js("js/jquery.min.js",'js/scrollreveal.js','js/hc-sticky.js')
         block scripts

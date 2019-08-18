@@ -25,6 +25,8 @@ block container
                             //    span 34567
                             //    | 已阅读
                             //li.like 9999
+        .pagelist
+            !=paginator({prev_text:'<i class="iconfont icon-pagepreview"></i>',next_text:'<i class="iconfont icon-pagenext"></i>'})
     aside.r_box
         include mixins/right
         +card()
@@ -32,8 +34,6 @@ block container
         +recommend()
         +tags()
         +wechat()
-block copyright
-    include partial/copyright
 block scripts
     include mixins/scripts
     +canvas()
