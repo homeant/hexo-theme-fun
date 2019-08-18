@@ -12,6 +12,7 @@ body
   color: #555
   background: #efefef
   line-height: 1.5
+  min-width: 375px
 
 
 img
@@ -325,35 +326,87 @@ footer
   color: #a5a4a4
   background: #fff
   text-align: center
-  padding: 20px 0
   clear: both
-  text-shadow: #fff 1px 0 2px, #fff 0 1px 2px, #fff -1px 0 2px, #fff 0 -1px 2px
   a
     color: #a5a4a4
+    &:hover
+      color: #19abd6
+  .footer_container
+    width: 1000px
+    position: relative
+    margin: 0 auto
+    display: flex
+    align-content: center
+    justify-content: space-between
+  .footer_top
+    background: #242f35
+    border-bottom: 1px solid rgba(255,255,255,.1)
+    padding: 1.5rem 0
+    .item_title
+      text-transform: capitalize
+      margin: 0 0 1.5rem
+    .item_content
+      .list
+        list-style: none
+        margin: 0
+        padding: 0
+        .list_item+.list_item
+          margin-top: 0.8rem
+  .footer_bottom
+    background: #2d383e
+    display: block
+    //padding: .8rem 0
+    .copyright
+      font-size: .8rem
+      line-height: 3
+    .social_network
+      font-size: 1.5rem
+      list-style: none
+      margin: 0
+      padding: 0
+      .social_network_item
+        float: left
+        transition: transform .3s
+        &:hover
+          transform: rotate(360deg)
+        &+.social_network_item
+           margin-left: 1rem
+        a
+          font-size: inherit
+          text-decoration: none
+          transition: color 0.3s
+          color: #fff
+          &:hover
+            color: #19abd6
+          i
+            font-size: inherit
 
 /*cd-top
 
 .cd-top
-  display: inline-block
-  height: 40px
-  width: 40px
+  height: 2.5rem
+  width: 2.5rem
+  display: block
+  text-align: center
   position: fixed
   bottom: 40px
   right: 10px
+  background: linear-gradient(to right,#19abd6 35%,#3ac0e8 100%)
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05)
+  border-radius: 50%
+  cursor: pointer
   overflow: hidden
-  text-indent: 100%
-  white-space: nowrap
-  background: rgba(0, 0, 0, 0.8) url(../images/top.png) no-repeat center
   visibility: hidden
   opacity: 0
-  -webkit-transition: all 0.3s
-  -moz-transition: all 0.3s
   transition: all 0.3s
   z-index: 9999999
   &.cd-is-visible
     visibility: visible
     opacity: 1
+  .iconfont
+    font-size: 1.5rem
+    line-height: 1.667
+    color: #ffffff
 
 .links
   margin: 0 15px

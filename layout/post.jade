@@ -26,10 +26,10 @@ block container
                         each tag in getValue(page,"tags.data",[])
                             a(href=url_for(tag.path), target='_blank')!= tag.name
                     - if(page.excerpt)
-                    .news_about
-                        strong 简介
-                        != page.excerpt
-                    .news_con!= page.more || page.content
+                        .news_about
+                            strong 简介
+                            != page.excerpt
+                     .news_con!= page.more || page.content
                 .nextinfo
                     p 上一篇：
                         - var prev = getValue(page,"prev");
@@ -43,17 +43,16 @@ block container
                                 a(href=url_for(next.path))!= next.title
                             else
                                 != '没有了'
-                .news_pl
-                    include mixins/scripts
-                    +comment()
+                - if(page.comments)
+                    .news_pl
+                        include mixins/scripts
+                        +comment()
     aside.r_box
         include mixins/right
         +card()
         +category()
         +wechat()
 
-block copyright
-    include partial/copyright
 block scripts
     include mixins/scripts
     +canvas()
