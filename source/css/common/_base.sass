@@ -12,6 +12,7 @@ body
   color: #555
   background: #efefef
   line-height: 1.5
+  min-width: 375px
 
 
 img
@@ -332,7 +333,8 @@ footer
       color: #19abd6
   .footer_container
     width: 1000px
-    margin: auto
+    position: relative
+    margin: 0 auto
     display: flex
     align-content: center
     justify-content: space-between
@@ -382,26 +384,29 @@ footer
 /*cd-top
 
 .cd-top
-  display: inline-block
-  height: 40px
-  width: 40px
+  height: 2.5rem
+  width: 2.5rem
+  display: block
+  text-align: center
   position: fixed
   bottom: 40px
   right: 10px
+  background: linear-gradient(to right,#19abd6 35%,#3ac0e8 100%)
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05)
+  border-radius: 50%
+  cursor: pointer
   overflow: hidden
-  text-indent: 100%
-  white-space: nowrap
-  background: rgba(0, 0, 0, 0.8) url(../images/top.png) no-repeat center
   visibility: hidden
   opacity: 0
-  -webkit-transition: all 0.3s
-  -moz-transition: all 0.3s
   transition: all 0.3s
   z-index: 9999999
   &.cd-is-visible
     visibility: visible
     opacity: 1
+  .iconfont
+    font-size: 1.5rem
+    line-height: 1.667
+    color: #ffffff
 
 .links
   margin: 0 15px
