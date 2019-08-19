@@ -183,6 +183,22 @@
     .sub li:last-child
       padding-bottom: 0
   footer
+    .footer_top
+      .footer_con_warp
+        &:before
+          content: ""
+          display: block
+          margin: 0 auto
+          position: relative
+          bottom: -2.5rem
+          width: 50%
+          height: 2px
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1)
+        &:not(:first-child)
+          &:before
+            bottom: -3.6rem
+          .item_title
+            margin-top: 1.5rem
     .footer_container
       width: 96%
       flex-direction: column
@@ -319,6 +335,22 @@
     .sub li:last-child
       padding-bottom: 0
   footer
+    .footer_top
+      .footer_con_warp
+        &:before
+          content: ""
+          display: block
+          margin: 0 auto
+          position: relative
+          bottom: -2.5rem
+          width: 50%
+          height: 2px
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1)
+        &:not(:first-child)
+          &:before
+            bottom: -3.6rem
+          .item_title
+            margin-top: 1.5rem
     .footer_container
       width: 96%
       flex-direction: column

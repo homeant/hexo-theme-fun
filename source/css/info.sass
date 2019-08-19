@@ -9,15 +9,37 @@
   .newsview
     padding: 0 30px
     .news_con
+      padding-top: .8rem
       a
         color: #009a61
         text-decoration: none
         border-bottom: 1px dashed #009a61
       hr
         margin: .8rem 0
-      p:not(:last-child)
-        margin-bottom: 1rem
-
+      p,pre
+        margin-bottom: .8rem
+      p
+        line-height: 2
+      > ul
+        li
+          line-height: 2
+      ol:not(:last-child)
+        margin-bottom: .5rem
+      ol
+        li:not(:last-child)
+          margin-bottom: .5rem
+      h1
+        font-size: 1.5rem
+        font-weight: 400
+        padding: .9rem 0
+      h2
+        font-size: 1.4rem
+        font-weight: 400
+        padding: .8rem 0
+      h3
+        font-size: 1.2rem
+        font-weight: 400
+        padding: .5rem 0
 .intitle
   line-height: 40px
   height: 40px
@@ -97,7 +119,6 @@
 .news_pl
   overflow: hidden
   padding: 1rem
-  border-top: 1px solid #009A61
   #comment_container
     .gitment-root-container
       margin: 0 !important
@@ -113,7 +134,7 @@
       .gitment-editor-login
         position: relative
   h2
-    border-bottom: #000 2px solid
+    border-bottom: 2px solid #3DB922
     line-height: 40px
     font-size: 14px
     padding-left: 10px

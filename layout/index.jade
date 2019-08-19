@@ -11,7 +11,7 @@ block container
                     h3.blogtitle
                         a(href=url_for(item.path), target='_blank')= item.title
                     span.blogpic
-                        a(href='/', title='')
+                        a(href=url_for(item.path), title=item.title)
                             img(src=url_for(item.cover_picture), alt='')
                     p.blogtext!= item.excerpt || truncate(strip_html(item.content), {length: 120})
                     .bloginfo
