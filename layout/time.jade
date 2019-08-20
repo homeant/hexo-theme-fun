@@ -3,7 +3,7 @@ extends partial/layout
 block site_title
     != page.title
 block styles
-    != css('css/index.css',"css/time.css")
+    != css('css/index.css?v='+date(Date.now(), 'YYYYMMDDHHmm'),'css/time.css?v='+date(Date.now(), 'YYYYMMDDHHmm'))
 block container
     .timebox
         ul
@@ -26,4 +26,4 @@ block container
 block scripts
     include mixins/scripts
     +canvas()
-    != js("js/common.js","js/index.js")
+    != js('js/common.js?v='+date(Date.now(), 'YYYYMMDDHHmm'),'js/index.js?v='+date(Date.now(), 'YYYYMMDDHHmm'))

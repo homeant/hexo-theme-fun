@@ -3,7 +3,7 @@ extends partial/layout
 block site_title
     != page.title
 block styles
-    != css('css/index.css',"css/info.css")
+    != css('css/index.css?v='+date(Date.now(), 'YYYYMMDDHHmm'),'css/info.css?v='+date(Date.now(), 'YYYYMMDDHHmm'))
     link(href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css", rel='stylesheet')
 block container
     main
@@ -62,4 +62,4 @@ block scripts
     script(type='text/javascript').
         hljs.initHighlightingOnLoad();
     script(async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js")
-    != js("js/common.js","js/index.js")
+    != js('js/common.js?v='+date(Date.now(), 'YYYYMMDDHHmm'),'js/index.js?v='+date(Date.now(), 'YYYYMMDDHHmm'))
