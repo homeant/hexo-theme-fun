@@ -1,7 +1,7 @@
 extends partial/layout
 
 block styles
-    != css('css/index.css')
+    != css('css/index.css?v='+date(Date.now(), 'YYYYMMDDHHmm'))
 
 block container
     main
@@ -37,4 +37,4 @@ block container
 block scripts
     include mixins/scripts
     +canvas()
-    != js("js/common.js", "js/index.js")
+    != js('js/common.js?v='+date(Date.now(), 'YYYYMMDDHHmm'), 'js/index.js?v='+date(Date.now(), 'YYYYMMDDHHmm'))
