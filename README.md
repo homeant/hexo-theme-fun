@@ -75,6 +75,10 @@ tags: #文章标签，可选
 
 hexo-theme-fun 可以选择 *gitalk* 或者 *gitment*
 
+[gitment](https://github.com/imsun/gitment)  
+[gitalk](https://github.com/gitalk/gitalk)
+
+
 ```yaml
 comment:
   gitalk:
