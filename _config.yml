@@ -24,13 +24,13 @@ copyright: |
 comment:
   gitalk:
     enable: true
-    owner: homeant
-    repo: fun.tianhui.xin
-    clientID: c36cc614c567adeadfb5
-    clientSecret: 341ad3eeab7c19c58db6786935eb8cc4d0b98263
+    owner: you github repository owner
+    repo: you github repository
+    clientID: you github Client ID
+    clientSecret: you github Client Secret
   gitment:
     enable: false
-    owner: homeant
-    repo: fun.tianhui.xin
-    clientID: c36cc614c567adeadfb5
-    clientSecret: 341ad3eeab7c19c58db6786935eb8cc4d0b98263
+    owner: you github repository owner
+    repo: you github repository
+    clientID: you github Client ID
+    clientSecret: you github Client Secret
